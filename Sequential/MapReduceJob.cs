@@ -50,7 +50,7 @@ namespace MapReduce
             }
             
             mapStopwatch.Stop();
-            Console.WriteLine($"✓ Map phase complete: {intermediateResults.Count:N0} intermediate records in {mapStopwatch.ElapsedMilliseconds}ms\n");
+            Console.WriteLine($"Map phase complete: {intermediateResults.Count:N0} intermediate records in {mapStopwatch.ElapsedMilliseconds}ms\n");
 
             Console.WriteLine("SHUFFLE PHASE");
             Console.WriteLine("─────────────────────────────────────────────────────────────────");
