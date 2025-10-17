@@ -8,6 +8,7 @@ public class Reducer : IReducer
 {
     public string Reduce(string key, IEnumerable<string> values)
     {
-        throw new NotImplementedException();
+        int count = values.Count();
+        return count.ToString();
     }
 }

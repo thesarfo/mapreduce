@@ -9,4 +9,4 @@ var mapper = new Mapper();
 var reducer = new Reducer();
 
 var job = new MapReduceJob(mapper, reducer);
-job.ReadInput("input.txt");
+job.ReadInput("input.txt", "output.txt");

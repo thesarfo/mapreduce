@@ -17,7 +17,7 @@ namespace MapReduce
             _reducer = reducer;
         }
 
-        public void ReadInput(string filePath)
+        public void ReadInput(string filePath, string outputPath)
         {
             if (!File.Exists(filePath))
                 throw new FileNotFoundException($"File not found: {filePath}");
@@ -60,11 +60,17 @@ namespace MapReduce
             }
 
            
-            Console.WriteLine("\n=== FINAL OUTPUT ===");
-            foreach (var kv in output)
+            // === WRITE OUTPUT TO DISK ===
+            Console.WriteLine("\n=== WRITING OUTPUT TO DISK ===");
+            using (var writer = new StreamWriter(outputPath))
             {
-                Console.WriteLine($"{kv.Key}: {kv.Value}");
+                foreach (var kv in output)
+                {
+                    writer.WriteLine($"{kv.Key}\t{kv.Value}");
+                }
             }
+
+            Console.WriteLine($"Output written to: {outputPath}");
         }
     }
 }
