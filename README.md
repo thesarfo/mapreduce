@@ -55,6 +55,6 @@ dotnet run  # Select 4 (worker)
 
 | Mode | Time | Why |
 |------|------|------|
-| Sequential | 28.9s | Simple, no overhead, but single-threaded |
+| Sequential | 20.8s | Simple, no overhead, but single-threaded |
 | Parallel | 15.9s | Fastest - utilizes 8 CPU cores, minimal overhead |
-| Distributed | 21.3s | Network & coordination overhead, but scales horizontally across machines |
+| Distributed | 26.3s | Network & coordination overhead, but scales horizontally across machines |
